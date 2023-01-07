@@ -68,6 +68,13 @@ class QuestionsViewController : UIViewController {
         super.viewDidLoad()
         updateUI()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showResult" {
+            let controller = segue.destination as! ResultsViewController
+            controller.answers = answerChosen
+        }
+    }
 }
 
 // MARK: - Private
